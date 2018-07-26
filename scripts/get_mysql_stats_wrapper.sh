@@ -26,6 +26,14 @@ if [ "$ITEM" = "running_slave" ]; then
         echo 0
     fi
     exit
+elif [ "$ITEM" = "mysqld_alive" ]; then
+    RES=`HOME=~zabbix mysql -h $HOST -P $PORT -u$USER -p$PASSWORD -N -e 'select 1 from dual;'`
+    if [ "$RES" = "1" ]; then
+        echo 1
+    else
+        echo 0
+    fi
+    exit
 elif [ -e $CACHEFILE ]; then
     # Check and run the script
     #TIMEFLM=`stat -c %Y /tmp/$HOST-$PORT-mysql_cacti_stats.txt`
