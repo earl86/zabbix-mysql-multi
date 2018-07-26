@@ -20,3 +20,7 @@ zabbix3.x mysql单机多实例 监控脚本及模版 基于percona修改
 3.导入模版文件zbx_export_templates-multi.xml
 
 4.重启zabbix-agent服务
+
+测试方法：
+
+zabbix_get -s zabbixagentip -p 10050 -k "MySQL[mysqlservieip,mysqlserviceport,mysqld_alive]"
