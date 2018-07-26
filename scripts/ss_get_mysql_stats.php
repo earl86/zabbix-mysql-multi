@@ -28,7 +28,7 @@ if ( !array_key_exists('SCRIPT_FILENAME', $_SERVER)
 # .cnf extension.
 # ============================================================================
 $mysql_user = 'zabbix';
-$mysql_pass = 'zabbix2018';
+$mysql_pass = 'zabbix';
 $mysql_port = 3306;
 $mysql_ssl  = FALSE;   # Whether to use SSL to connect to MySQL.
 $mysql_ssl_key  = '/etc/pki/tls/certs/mysql/client-key.pem';
