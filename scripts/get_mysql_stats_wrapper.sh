@@ -27,7 +27,7 @@ if [ "$ITEM" = "running_slave" ]; then
     fi
     exit
 elif [ "$ITEM" = "mysqld_alive" ]; then
-    RES=`HOME=~zabbix mysql -h $HOST -P $PORT -u$USER -p$PASSWORD -N -e 'select 1 from dual;'`
+    RES=`HOME=~zabbix mysql -h $HOST -P $PORT -u$USER -p$PASSWORD -N -e 'select 1 from dual;' 2>/dev/null`
     if [ "$RES" = "1" ]; then
         echo 1
     else
