@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-07-26T02:07:19Z</date>
+    <date>2018-07-26T02:23:47Z</date>
     <groups>
         <group>
             <name>Percona Templates</name>
@@ -3549,7 +3549,11 @@
                     <port/>
                     <description/>
                     <inventory_link>0</inventory_link>
-                    <applications/>
+                    <applications>
+                        <application>
+                            <name>MySQL</name>
+                        </application>
+                    </applications>
                     <valuemap/>
                     <logtimefmt/>
                     <preprocessing/>
@@ -9451,13 +9455,7 @@
             <description/>
             <type>0</type>
             <manual_close>0</manual_close>
-            <dependencies>
-                <dependency>
-                    <name>MySQL is down on {HOST.NAME}</name>
-                    <expression>{Percona MySQL Server Template Multi:proc.num[mysqld].last(0)}=0</expression>
-                    <recovery_expression/>
-                </dependency>
-            </dependencies>
+            <dependencies/>
             <tags/>
         </trigger>
         <trigger>
@@ -9495,17 +9493,11 @@
             <description/>
             <type>0</type>
             <manual_close>0</manual_close>
-            <dependencies>
-                <dependency>
-                    <name>MySQL is down on {HOST.NAME}</name>
-                    <expression>{Percona MySQL Server Template Multi:proc.num[mysqld].last(0)}=0</expression>
-                    <recovery_expression/>
-                </dependency>
-            </dependencies>
+            <dependencies/>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Percona MySQL Server Template Multi:proc.num[mysqld].last(0)}=0</expression>
+            <expression>{Percona MySQL Server Template Multi:MySQL[{HOST.IP},{$MYSQL_PORT},mysqld_alive].last()}=0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>MySQL is down on {HOST.NAME}</name>
@@ -9518,7 +9510,12 @@
             <type>0</type>
             <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
+            <tags>
+                <tag>
+                    <tag>{Percona MySQL Server Template Multi:MySQL[{HOST.IP},{$MYSQL_PORT},slave_lag].last(0)}&gt;300</tag>
+                    <value/>
+                </tag>
+            </tags>
         </trigger>
         <trigger>
             <expression>{Percona MySQL Server Template Multi:MySQL[{HOST.IP},{$MYSQL_PORT},slave_lag].last(0)}&gt;300</expression>
@@ -9577,13 +9574,7 @@
             <description/>
             <type>0</type>
             <manual_close>0</manual_close>
-            <dependencies>
-                <dependency>
-                    <name>MySQL is down on {HOST.NAME}</name>
-                    <expression>{Percona MySQL Server Template Multi:proc.num[mysqld].last(0)}=0</expression>
-                    <recovery_expression/>
-                </dependency>
-            </dependencies>
+            <dependencies/>
             <tags/>
         </trigger>
     </triggers>
