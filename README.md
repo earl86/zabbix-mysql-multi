@@ -1,5 +1,7 @@
 # zabbix-mysql-multi
-zabbix3.x mysql单机多实例 监控脚本及模版 基于percona修改，增加对单主机，多ip单端口，多ip多端口，单ip多端口 不同情况的支持
+zabbix3.x mysql单机多实例 监控脚本及模版 基于percona修改，增加对单主机情况下 多ip单端口，多ip多端口，单ip多端口 不同情况的支持
+
+精简userparameter_percona_mysql.conf配置，取消原版检测key用两位字母代替的方法更直观
 
 安装：
 1.安装php运行环境
