@@ -4,7 +4,9 @@ zabbix3.x mysql单机多实例 监控脚本及模版 基于percona修改，增�
 精简userparameter_percona_mysql.conf配置，取消原版检测key用两位字母代替的方法更直观
 
 安装：
-1.安装php运行环境
+1.安装php运行环境，及zabbix agent
+
+yum install zabbix-agent php php-mysql
 
 
 2.安装监控脚本及配置文件
