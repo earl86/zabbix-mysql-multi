@@ -13,6 +13,8 @@ zabbix3.x mysql单机多实例 监控脚本及模版 基于percona修改，增�
 
 /etc/zabbix/scripts/get_mysql_stats_wrapper.sh
 
+修改以上两个脚本内USER及PASSWORD 配置
+
 配置文件目录：
 
 /etc/zabbix/zabbix_agentd.d/userparameter_percona_mysql.conf
