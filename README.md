@@ -25,7 +25,7 @@ yum install zabbix-agent php php-mysql
 
 3.导入模版文件zbx_export_templates-multi.xml
 
-模版默认使用Macros {$MYSQL_PORT}=3306，如需要配置其他端口 需要在Host里修改 Inherited and host macros 选项将3306修改为其他端口即可。
+模版默认使用Macros {$MYSQL_PORT}=3306，如需要配置其他端口 需要在对应的mysql服务 Host里修改 Inherited and host macros 选项将3306修改为其他端口即可。
 
 4.重启zabbix-agent服务
 
